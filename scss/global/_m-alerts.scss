@@ -1,0 +1,92 @@
+.alert, [data-jnj-alertcontent]:after {
+	margin-bottom: 0.6875em;
+	padding: 0.6875em;
+}
+.badge, [data-jnj-badgecontent]:after {
+	display: inline-block;
+	padding: 0.3125em 0.6875em;
+	margin: 0 0.6875em;
+	vertical-align: middle;
+	border-radius: 1em;
+	font: bold 12px/1 "Helvetica Neue", Arial, Helvetica, sans-serif;
+	letter-spacing: 0;
+}
+.alert, .badge,
+[data-jnj-badgecontent]:after, [data-jnj-alertcontent]:after {
+	color: #fff;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+.alert a, .badge a {
+	color: #fff;
+}
+.alert.message, .badge.message,
+[data-jnj-alertstyle="message"]:after, [data-jnj-badgestyle="message"]:after {
+	color: #3a87ad;
+	background-color: #d0e4ee;
+	background-color: rgba(190, 221, 237, 0.75);
+}
+.alert.message a, .badge.message a {
+	color: #3a87ad;
+}
+.alert.warning, .badge.warning,
+input.warning, textarea.warning, select.warning, label.warning, .label.warning,
+[data-jnj-alertstyle="warning"]:after, [data-jnj-badgestyle="warning"]:after {
+	color: #c09853;
+	background-color: #f6f0e0;
+	background-color: rgba(245, 238, 213, 0.75);
+}
+input.warning, textarea.warning, select.warning, label.warning, .label.warning {
+	border-color: #c09853;
+}
+.alert.warning a, .badge.warning a {
+	color: #c09853;
+}
+.alert.success, .badge.success,
+[data-jnj-alertstyle="success"]:after, [data-jnj-badgestyle="success"]:after {
+	color: #468847;
+	background-color: #e3e8d9;
+	background-color: rgba(217, 229, 204, 0.75);
+}
+.alert.success a, .badge.success a {
+	color: #468847;
+}
+.alert.error, .badge.error,
+input.error, textarea.error, select.error, label.error, .label.error,
+[data-jnj-alertstyle="error"]:after, [data-jnj-badgestyle="error"]:after {
+	color: #b94a48;
+	background-color: #e8dbdb;
+	background-color: rgba(229, 207, 207, 0.75);
+}
+input.error, textarea.error, select.error, label.error, .label.error {
+	border-color: #b94a48;
+}
+.alert.error a, .badge.error a {
+	color: #b94a48;
+}
+.alert.disabled, .badge.disabled,
+[data-jnj-alertstyle="disabled"]:after, [data-jnj-badgestyle="disabled"]:after {
+	color: #888;
+	background-color: #ddd;
+	background-color: rgba(200, 200, 200, 0.75);
+}
+.alert.disabled a, .badge.disabled a {
+	color: #888;
+}
+.alert.sticky {
+	margin: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 5;
+}
+[data-jnj-alertcontent]:after {
+	content: attr(data-jnj-alertcontent);
+	display: block;
+	margin-bottom: 0;
+}
+[data-jnj-badgecontent]:after {
+	content: attr(data-jnj-badgecontent);
+	margin-left: 0.5em;
+}

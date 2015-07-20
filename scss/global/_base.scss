@@ -1,0 +1,126 @@
+/*
+Grapefruit: #c85656, rgba(0, 100, 145, 1)
+Red: #ff6d6d, rgba(227, 24, 55, 1)
+*/
+@font-face {
+	font-family: 'archivo_narrowbold';
+	src: url('../../fonts/archivonarrow-bold.eot');
+	src: url('../../fonts/archivonarrow-bold.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/archivonarrow-bold.woff') format('woff'),
+		 url('../../fonts/archivonarrow-bold.ttf') format('truetype'),
+		 url('../../fonts/archivonarrow-bold.svg#archivo_narrowbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'archivo_narrowregular';
+    src: url('../../fonts/archivonarrow-regular.eot');
+    src: url('../../fonts/archivonarrow-regular.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/archivonarrow-regular.woff') format('woff'),
+         url('../../fonts/archivonarrow-regular.ttf') format('truetype'),
+         url('../../fonts/archivonarrow-regular.svg#archivo_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../../fonts/fontawesome-webfont.eot');
+	src: url('../../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/fontawesome-webfont.woff') format('woff'),
+		 url('../../fonts/fontawesome-webfont.ttf') format('truetype'),
+		 url('../../fonts/fontawesome-webfont.svg#fontawesome') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font: 300 1em/1.375em "Helvetica Neue", Arial, Helvetica, sans-serif;
+	color: #515a5b;
+	padding: 0 0.5em;
+}
+
+a:link, a:visited {
+	color: #c85656;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus {
+	color: #ff6d6d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	color: #5a2726; /* Dark Brown */
+	font-family: "archivo_narrowregular", "ArialNarrow", Arial, "Helvetica Neue", Helvetica, sans-serif;
+	letter-spacing: -1px;
+}
+h1 {
+	font-size: 3em;
+	line-height: 1.375em;
+	margin-bottom: 0.22915em;
+}
+h2 {
+	font-size: 2em;
+	line-height: 1.375em;
+	margin-bottom: 0.34375em;
+}
+h3 {
+	font-size: 1.75em;
+	line-height: 1.5714em;
+	margin-bottom: 0.39285em;
+}
+h4 {
+	font-size: 1.5em;
+	line-height: 1.8333em;
+	margin-bottom: 0.45835em;
+}
+h5, h6 {
+	font: bold 1em/1.375em "Helvetica Neue", Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 0.6875em;
+}
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+	margin-bottom: 0;
+}
+.subhead {
+	display: block;
+	font: bold 0.375em "Helvetica Neue", Arial, Helvetica, sans-serif;
+	line-height: 1;
+	opacity: 0.65;
+	letter-spacing: normal;
+}
+
+p, ul, ol, form, table {
+	margin: 0 0 1.375em;
+	padding: 0;
+}
+
+p:last-child, ul:last-child, ol:last-child, form:last-child, table:last-child {
+	margin-bottom: 0;
+}
+li {
+	margin: 0 0 0.6875em 1.375em;
+	list-style: disc;
+}
+ol li {
+	list-style: lower-roman;
+}
+li:last-child {
+	margin-bottom: 0;
+}
+.copy li, li.copy {
+	margin-left: 1.5em;
+	list-style: inherit;
+}
+blockquote {
+	margin-left: 0;
+	padding-left: 1em;
+	border-left: 0.25em solid #eee;
+}
+img, object, video, audio {
+	max-width: 100%;
+}
+code {
+	font: 0.875em Monaco, monospace;
+	background-color: rgba(0, 0, 0, 0.05);
+}

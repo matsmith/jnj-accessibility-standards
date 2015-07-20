@@ -1,0 +1,42 @@
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="tables">
+
+	<header class="mod_header">
+		<h2>Tables</h1>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Tables used for layout</h3>
+
+		<p>Using HTML table element structures for layout purposes can cause significant problems for assistive technology users. Assistive technologies use the structure of an HTML table to present data to the user in a logical manner. When they encounter a layout table they may believe they are navigating through tabular data when they are not. It also means that extra, redundant, information (such as row and column numbers) is announced whenever a screen reader user navigates to a particular component, such as a link. This can add to the cognitive load by introducing extra noise that masks understanding of the content. In the Succeed Questionnaire, a layout table is sued to display images of foods the user does not eat.</p>
+
+		<figure class="extra">
+			<img src="./img/non-table.png"/>
+		</figure>
+
+		<h4>Recommendations</h4>
+
+		<p>The best practice recommendation is to eliminate the use of table elements to visually position content unless the content is data that should be presented in tabular format. Instead, where content does not relate to a table of data, use CSS to control its layout.  As a result, assistive technologies do not announce redundant information, such as row and column headers.</p>
+
+		<p><strong>Non-disruptive alternative (viable under certain conditions)</strong></p>
+
+		<p>An alternative approach which can be utilized until a recoding solution is feasible is to use the <a href="http://www.w3.org/WAI/PF/aria/roles#presentation">WAI-ARIA role attribute with a value of presentation</a> on any <code>&lt;table&gt;</code> elements that are being used purely for layout purposes.</p>
+
+		<textarea class="brush:html">
+			<table role="presentation">
+				&hellip;
+			</table>
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.3.1 Info and Relationships (Level A)</strong></p>
+
+		<p>Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+
+	</div>
+	
+</section>

@@ -1,0 +1,66 @@
+.drawer {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0 -0.5em;
+	padding: 0.34375em;
+	position: relative;
+	z-index: 3;
+	color: #fff;
+	background-color: #ff6d6d;
+	transition: background-color 0.5s ease-in-out;
+}
+.drawer h1, .drawer h2, .drawer h3, .drawer h4, .drawer h5, .drawer h6,
+.drawer a {
+	color: #fff;
+}
+.drawer li {
+	list-style: none;
+	margin-left: 0;
+}
+.drawer:not(.open) {
+	cursor: pointer;
+}
+
+.drawer_body {
+	display: none;
+}
+.drawer.open {
+	background-color: #ff6d6d;
+	background-color: rgba(200, 86, 86, 0.9);
+}
+.drawer.open .drawer_body {
+	display: block;
+}
+#drawer_mask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+@media only screen and (min-width:600px){
+	html.jnj_has_drawer body {
+		padding: 0 0 0 3.59375%;
+	}
+	.drawer {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 3.59375%;
+		width: 3.59375%;
+		min-width: 2em;
+		max-width: 2.5em;
+		margin-right: 0;
+		margin-left: -3.59375%;
+		padding-top: 0.6875em;
+		padding-bottom: 0.6875em;
+		overflow-y: auto;
+	}
+	.drawer.open {
+		padding-left: 0.6875em;
+		padding-right: 0.6875em;
+		width: 32.5%;
+		max-width: 18em;
+	}
+}

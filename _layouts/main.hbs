@@ -1,0 +1,80 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html lang="{{ lang }}" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="{{ lang }}" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="{{ lang }}" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="{{ lang }}" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{{ title }} | Johnson and Johnson</title>
+	<meta name="description" content="{{ meta.description }}">
+	<meta name="keywords" content="{{ meta.keywords }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<link rel="apple-touch-icon-precomposed" href="ios-icon.png"/>
+	<link rel="stylesheet" href="css/generated/style.css">
+<!--
+											
+		 ,---._                     ,---._  
+	   .-- -.' \                  .-- -.' \ 
+	   |    |   :                 |    |   :
+	   :    ;   |      ,---,      :    ;   |
+	   :        |  ,-+-. /  |     :        |
+	   |    :   : ,--.'|'   |     |    :   :
+	   :         |   |  ,"' |     :         
+	   |    ;   ||   | /  | |     |    ;   |
+   ___ l         |   | |  | | ___ l         
+ /    /\    J   :|   | |  |//    /\    J   :
+/  ../  `..-    ,|   | |--'/  ../  `..-    ,
+\    \         ; |   |/    \    \         ; 
+ \    \      ,'  '---'      \    \      ,'  
+  "---....--'                "---....--'    
+											
+
+-->
+	<script src="js/libs/modernizr-1.7.min.js"></script>
+</head>
+	<body>
+		<aside role="complementary" class="drawer">
+			<header class="drawer_header">
+				<a href="#"><img src="img/logo.png" class="logo" /></a>
+			</header>
+			<div class="drawer_body">
+				<nav role="navigation" class="invert acdn open">
+					<div class="acdn_header">
+						<h5>Table of Contents</h5>
+					</div>
+					<div class="acdn_body">
+						<ul id="toc"></ul>
+					</div>
+				</nav>
+			</div>
+		</aside>
+
+		<main role="main">
+
+			<section class="mod">
+				<header class="mod_header">
+					<a class="source-tag" href="https://www.github.com/matsmith/jnj-code-standards/">view source</a>
+					<h1>JNJ Front-end Code Standards &amp; Best Practices</h1>
+				</header>
+			</section>
+
+			{{>body}}
+			
+			<footer role="contentinfo">
+			<p>
+				<span class="float_left">{{now '%Y'}} Johnson &amp; Johnson, All rights reserved.</span>
+				<span class="float_right">All content licensed under Creative Commons Attribution 3.0 Unported License</span>
+			</p>
+			</footer>
+
+		</main>
+		
+		 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src='js/plugins.min.js'></script>
+		<script defer src='js/script.js'></script>
+
+		<script>var _gaq=[["_setAccount","UA-1745698-2"],["_trackPageview"]];(function(e,a){var c=e.createElement(a),b=e.getElementsByTagName(a)[0];c.async=1;c.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";b.parentNode.insertBefore(c,b)}(document,"script"));</script>
+	</body>
+</html>

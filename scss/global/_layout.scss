@@ -1,0 +1,130 @@
+.l_row {
+	margin: 0 0 1.375em;
+}
+.l_col,
+.pico, .nano, .micro, .milli, .centi, .deci, .deka, .hecto, .kilo, .mega, .giga, .tera {
+	display: block;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0.6875em;
+}
+
+.block {
+	width: 100%;
+}
+
+.drawer .logo {
+	width: 2em;
+}
+
+.drawer.open .logo {
+	width: 4em;
+	margin-bottom: 0.6875em;
+}
+
+dt {
+	font-weight: 500;
+}
+
+@media only screen and (min-width:600px){
+	.l_col,
+	.pico, .nano, .micro, .milli, .centi, .deci, .deka, .hecto, .kilo, .mega, .giga {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: -0.3em;
+		margin-right: 1.25%;
+		margin-bottom: 0;
+	}
+	.l_col {
+		vertical-align: top;
+	}
+	.l_col:first-child,
+	.pico:first-child, .nano:first-child, .micro:first-child, .milli:first-child, .centi:first-child, .deci:first-child, .deka:first-child, .hecto:first-child, .kilo:first-child, .mega:first-child, .giga:first-child {
+		margin-left: 0;
+	}
+	.l_col:last-child,
+	.pico:last-child, .nano:last-child, .micro:last-child, .milli:last-child, .centi:last-child, .deci:last-child, .deka:last-child, .hecto:last-child, .kilo:last-child, .mega:last-child, .giga:last-child {
+		margin-right: 0;
+	}
+	.l_col_1, .pico {
+		width: 7.1875%;
+	}
+	.l_col_2, .nano {
+		width: 15.625%;
+	}
+	.l_col_3, .micro {
+		width: 24.0625%;
+	}
+	.l_col_4, .milli {
+		width: 32.5%;
+	}
+	.l_col_5, .centi {
+		width: 40.9375%;
+	}
+	.l_col_6, .deci {
+		width: 49.375%;
+	}
+	.l_col_7, .deka {
+		width: 57.8125%;
+	}
+	.l_col_8, .hecto {
+		width: 66.25%;
+	}
+	.l_col_9, .kilo {
+		width: 74.6875%;
+	}
+	.l_col_10, .mega {
+		width: 83.125%;
+	}
+	.l_col_11, .giga {
+		width: 91.5625%;
+	}
+	.l_col_12, .tera {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.l_offset.l_offset_col_1, .l_offset.l_offset_pico {
+		margin-left: 8.4375%;
+	}
+	.l_offset.l_offset_col_2, .l_offset.l_offset_nano {
+		margin-left: 16.875%;
+	}
+	.l_offset.l_offset_col_3, .l_offset.l_offset_micro {
+		margin-left: 25.3125%;
+	}
+	.l_offset.l_offset_col_4, .l_offset.l_offset_milli {
+		margin-left: 33.75%;
+	}
+	.l_offset.l_offset_col_5, .l_offset.l_offset_centi {
+		margin-left: 42.1875%;
+	}
+	.l_offset.l_offset_col_6, .l_offset.l_offset_deci {
+		margin-left: 50.625%;
+	}
+	.l_offset.l_offset_col_7, .l_offset.l_offset_deka {
+		margin-left: 59.0625%;
+	}
+	.l_offset.l_offset_col_8, .l_offset.l_offset_hecto {
+		margin-left: 67.5%;
+	}
+	.l_offset.l_offset_col_9, .l_offset.l_offset_kilo {
+		margin-left: 75.9375%;
+	}
+	.l_offset.l_offset_col_10, .l_offset.l_offset_mega {
+		margin-left: 84.375%;
+	}
+	.l_offset.l_offset_col_11, .l_offset.l_offset_giga {
+		margin-left: 92.8125%;
+	}
+
+	main {
+		width: 90%;
+		max-width: 60em;
+		margin: 1.375em auto;
+		padding-bottom: 2em;
+		-webkit-font-smoothing: antialiased;
+	}
+
+}

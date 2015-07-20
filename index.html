@@ -1,0 +1,1130 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Front-end Accessibility Standards &amp;amp; Best Practices | Johnson and Johnson</title>
+	<meta name="description" content="Johnson and Johnson Coding Standards and Frontend development Best Practices">
+	<meta name="keywords" content="Johnson and Johnson code standards, coding standards, frontend development, frontend best practices, html code standards, html5 code standards, css code standards, best code practices, development, frontend development">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<link rel="apple-touch-icon-precomposed" href="ios-icon.png"/>
+	<link rel="stylesheet" href="css/generated/style.css">
+<!--
+											
+		 ,---._                     ,---._  
+	   .-- -.' \                  .-- -.' \ 
+	   |    |   :                 |    |   :
+	   :    ;   |      ,---,      :    ;   |
+	   :        |  ,-+-. /  |     :        |
+	   |    :   : ,--.'|'   |     |    :   :
+	   :         |   |  ,"' |     :         
+	   |    ;   ||   | /  | |     |    ;   |
+   ___ l         |   | |  | | ___ l         
+ /    /\    J   :|   | |  |//    /\    J   :
+/  ../  `..-    ,|   | |--'/  ../  `..-    ,
+\    \         ; |   |/    \    \         ; 
+ \    \      ,'  '---'      \    \      ,'  
+  "---....--'                "---....--'    
+											
+
+-->
+	<script src="js/libs/modernizr-1.7.min.js"></script>
+</head>
+	<body>
+		<aside role="complementary" class="drawer">
+			<header class="drawer_header">
+				<a href="#"><img src="img/logo.png" class="logo" /></a>
+			</header>
+			<div class="drawer_body">
+				<nav role="navigation" class="invert acdn open">
+					<div class="acdn_header">
+						<h5>Table of Contents</h5>
+					</div>
+					<div class="acdn_body">
+						<ul id="toc"></ul>
+					</div>
+				</nav>
+			</div>
+		</aside>
+
+		<main role="main">
+
+			<section class="mod">
+				<header class="mod_header">
+					<a class="source-tag" href="https://www.github.com/matsmith/jnj-code-standards/">view source</a>
+					<h1>JNJ Front-end Code Standards &amp; Best Practices</h1>
+				</header>
+			</section>
+
+			
+<!-- #### Media SECTION #### -->
+
+<section class="mod" id="media">
+
+	<header class="mod_header">
+		<h2>Media</h1>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Alt text for images</h3>
+
+		<p>Text alternatives provide a text equivalent of visual information for users who can't see images. Without text alternatives, information in images is not accessible. With incorrect text alternatives, image-based information is confusing, misleading, or irrelevant.</p>
+		<p>When images are enclosed in a link or a button, the images’ alternate text needs to describe not just the image but also what will happen when the link is clicked.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>All images using the <code>&lt;img&gt;</code> element must be given appropriate alternative text using the alt attribute</p>
+
+		<textarea class="brush:html"><img src="&hellip;" alt="Alternative Text"></textarea>
+
+		<p>Follow these rules for alternative text:</p>
+
+		<ul>
+			<li>If the content displays specific information, the text shall be an accurate, concise and equivalent presentation of this information.</li>
+			<li>If an image is purely decorative, for example an image that is used for styling or layout purposes only, implement it as a CSS background image. If this isn’t a feasible solution, an empty alternative (e.g. alt="") must be always used. This will prevent assistive technology from trying to find a different way to describe the content (such as announcing the image's filename). Don’t use null alt attributes when images do convey meaningful content.</li>
+			<li>Phrases such as “image of&hellip;”, “graphic of&hellip;”, “&hellip; logo” or “click here” must be avoided.</li>
+			<li>If the image is the sole content of a link, the alt attribute should describe the link target, not the image.</li>
+			<li>If the content identifies a specific state (e.g. an icon that indicates incorrect input), this state must be described rather than the actual content.</li>
+			<li>Refer to HTML5: Techniques for providing useful text alternatives for comprehensive advice on text alternatives.</li>
+			<li>Don’t use the title attribute on images or links since doing so can lead to screen-reader users hearing that announcement twice.</li>
+			<li>Provide suitable direct equivalents for information presented in graphical format (such as a graph or a chart). This can be achieved by:</li>
+		</ul>
+			<ol>
+				<li>Providing short alternative text which briefly summarizes the content (Refer to: Providing short text alternatives that provide a brief description of the non-text content) AND</li>
+				<li>Providing a direct text/tabular equivalent of the graph/chart close to the image, or on a separate page using an appropriate link (Refer to: Providing a long description in text near the non-text content, with a reference to the location of the long description in the short description)</li>
+			</ol>
+
+		<h4>Examples</h4>
+
+		<table class="bordered">
+		<thead>
+		<tr>
+			<th>Image</th>
+			<th>Function</th>
+			<th>Current Alt</th>
+			<th>Recommended Alt</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><img src="./img/alt-table-skills.png"></td>
+			<td>Video thumbnail that, when its surrounding link clicked, plays the video</td>
+			<td><code>alt="Skills For Life"</code></td>
+			<td><code>alt="Play Skills For Life video"</code></td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-profiles.png"></td>
+			<td>Video thumbnail that, when its surrounding link is clicked, plays the video</td>
+			<td><code>alt="People Profiles"</code></td>
+			<td><code>alt="Play People Profiles video"</code></td>
+		</tr>
+		<tr>
+			<td>[logo-hm-overlay.png—a potentially transparent image]</td>
+			<td>Decorative image</td>
+			<td>(none)</td>
+			<td><code>alt=""</code></td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-decorative.png"></td>
+			<td>Decorative image</td>
+			<td>(none)</td>
+			<td><code>alt=""</code></td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-branding.png"></td>
+			<td>Branding image</td>
+			<td>(none)</td>
+			<td><code>alt="Wellness and Prevention"</code> or <code>alt="Wellness and Prevention, a Johnson &amp; Johnson company"</code> (Either version would be fine, depending on branding preferences.)</td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-profile-icon.png"></td>
+			<td>Decorative image within the context of its surrounding content</td>
+			<td><code>alt="My Mission"</code></td>
+			<td><code>alt=""</code></td>
+		</tr>
+		</tbody>
+		</table>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 &mdash; 1.1.1 Non-text Content (Level A)</strong></p>
+
+		<p>All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.</p>
+
+		<p><strong>WCAG 2.0 &mdash; 4.1.2 Name, Role, Value (Level A)</strong></p>
+
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Alt text for font-icons</h3>
+
+		<p>Icon fonts are just regular fonts, but instead of containing letters, numbers, and other typical font characters, they contain icons. As a simplified example, if you were to type an “m” using an icon font that might be displayed as a mailbox icon; or if you were to type an “h” using an icon font, that might be displayed as a home icon. The downside to icon fonts is that screen-reader users would only hear “m” or “h” or whichever letter is representing the icon that happens to be used—because the screen reader doesn’t know that the “m” happens to look like a mailbox and the “h” happens to look like a home icon.</p>
+
+		<h4>Issue</h4>
+
+		<textarea class="brush:html">
+			<i class="icon-sans-close close-overlay-icon">  </i>
+		</textarea>
+
+		<h4>Recommendations</h4>
+
+		<ul>
+			<li>Hide the character that triggers the icon from screen readers.</li>
+			<li>Then provide alternate text to describe what the icon represents.</li>
+		</ul>
+
+		<h4>Example</h4>
+
+		<textarea class="brush:html">
+			<span class="visually-hidden">Close</span><i aria-hidden="true" class="icon-sans-close close-overlay-icon">  </i>
+		</textarea>
+
+		<ul>
+			<li>The <code>aria-hidden="true"</code> attribute on the icon tells screen readers to ignore that element. (This prevents the screen reader from announcing whichever character may be in use there.)</li>
+			<li>The <code>&lt;span class="visually-hidden"&gt;Close&lt;/span&gt;</code> describes the icon, and the class="visually-hidden" part ensures that the “Close” text will only be available to screen readers. (That is, “Close” won’t appear on the screen anywhere.)</li>
+		</ul>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.1.1 Non-Text Content (Level A)</strong></p>
+
+		<p>All non-text content must have a text alternative that serves the same purpose. For images, ensure the alt attribute is an equivalent if the image isn’t presented.</p>
+
+		<p><strong>WCAG 2.0 – 1.3.1 Info and Relationships (Level A)</strong></p>
+
+		<p>Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Audio descriptions of visual media</h3>
+
+		<p>The videos on the home page don't have an audio-description track. This results in blind users not being able to fully understand the content of the videos.</p>
+
+		<p>For instance, the "Skills for Life" video has various on-screen headings (such as "Building Motivation" and "Coordinating Care") that a person who may be blind wouldn’t otherwise be aware of without an audio description.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>For hearing impaired &mdash; Closed Captioning</p>
+
+		<p>For visually impaired &mdash; Audio Descriptions of visual content or video text</p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0—1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)</strong></p>
+
+		<p>An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.</p>
+
+		<p><strong>WCAG 2.0 - 1.2.5 Audio Description (Prerecorded) (Level AA)</strong></p>
+
+		<p>Audio description is provided for all prerecorded video content in synchronized media.</p>
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">ASCII art used as image</h3>
+
+		<p>"ASCII art" is images created using special arrangements of text characters and symbols. For example, "->" often is used as an arrow. Screen readers read most ASCII art literally, which can be extremely confusing. For example, "->" reads as "dash greater."</p>
+		
+		<p>ASCII art is present in some tested screens. In the image below a ">" is used and announced by JAWS as "more news greater than link"</p>
+
+		<figure class="preCode">Notice the &gt; character in the value attribute</figure>
+		<textarea class="brush:html">
+			<input type="submit" class="form-submit program_forecolor" value="Save and Continue &gt;" id="edit-navigation-next" name="op">
+		</textarea>
+
+		<h4>Recommendations</h4>
+
+		<p>Don't use ASCII art...just DON'T.</p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.1.1 Non-Text Content (Level A)</strong></p>
+
+		<p>All non-text content must have a text alternative that serves the same purpose. For images, ensure the alt attribute is an equivalent if the image is not presented.</p>
+
+		<p><strong>WCAG 2.0 – 4.1.2 Name, Role, Value (Level A)</strong></p>
+
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically</p>
+
+	</div>
+	
+</section>
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="structure">
+
+	<header class="mod_header">
+		<h2>Structure</h2>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Semantic markup</h3>
+		
+		<p>When list-based content is marked up as a list, assistive technology users can quickly navigate to the content, and easily skip over it and easily orient themselves within it (particularly useful for nested lists). When it is not, the user has to find it by moving through the entire page, and cannot skip over it.</p>
+
+		<p>While most tested samples use lists correctly, in others proper use of lists would provide missing semantic structure to the code, improving the experience for the user.</p>
+
+		<p>In the example below, the items in the left column of the page explain the various stages in the Succeed section of the app, however, there is no programmatic association between these elements to expose any kind of relationship between them.</p>
+
+		<figure class="extra">
+			<img src="./img/semantic-markup.png"/>
+		</figure>
+
+		<textarea class="brush:html">
+			<div id="left-navigation"> <!-- left navigation -->
+				<a class="skip-content" href="#main-content">Skip to Main Content</a>
+				<!-- each item in this part is inside a div -->
+				<div id="menu_assessment">
+					<div class="program_nav_box_inactive">
+						<div class="program_nav_head">
+							<span class="program_nav_head_logo"></span>
+							<span class="program_nav_head_text">Questionnaire</span>
+						</div>
+						<div class="program_nav_description">
+							<p class="navigation-text">Your <strong>questionnaire</strong> will tell us where you are and what you need, so that we can create your plan.</p>
+						</div>
+					</div>
+				</div>
+
+			&hellip;
+
+			</div>
+
+		</textarea>
+
+		<h4>Recommendations</h4>
+
+		<p>Make sure that, where content is organized as a list, the appropriate list markup (<code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> elements) is used. Avoid using asterisks or other characters within HTML to make items not marked up as a list look as if they represent items within a list.  The rule of thumb to follow is: if it looks like a list, mark it up as a list.</p>
+
+		<p>In the formentioned example, these elements would be better presented as a description list (<code>&lt;dl&gt;</code>). This would allow the user to understand the relationship between the name of the section (<code>&lt;dt&gt;</code>) and it's description (<code>&lt;dd&gt;</code>).</p>
+
+		<textarea class="brush:html">
+			<dl>
+				<dt id="menu_assessment">
+					<span class="program_nav_head_logo"></span>
+					Questionnaire
+				</dt>
+				<dd>
+					Your <strong>questionnaire</strong> will tell us where you are and what you need, so that we can create your plan.
+				</dd>
+
+				&hellip;
+
+			</dl>
+
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.3.1 Info and Relationships (Level A)</strong></p>
+
+		<p>Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Human language of page content</h3>
+
+		<p>The <code>lang</code> attribute is used on &lt;html&gt; element to indicate the overall language a page, and the <code>lang</code> attribute can also be used on individual elements to indicate that they’re in a language that’s different from the main language of the page. The <code>lang</code> attribute explicit defines what language a page or an element is in so that an appropriate language dictionary can be used; and in the case of screen readers and similar assistive technologies with voice output, it also ensures that the content is pronounced using the right voice or language library.</p>
+
+		<p>Currently, all tested pages correctly set the lang attribute of their <code>&lt;html&gt;</code> elements correctly to "English" or "Spanish" as needed.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>If certain elements within a page use a language that’s different from the language that’s set on the page’s <code>&lt;html&gt;</code> element, those elements (or one of their containing elements) need to have a lang attribute to convey that they’re in a different language.</p>
+
+		<textarea class="brush:html">
+			<li lang="es" class="language last"><a href="/mhmsite/choose-language/es">Ver en Español</a></li>
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 3.1.1 Language of Page (Level A)</strong></p>
+
+		<p>The default human language of the page must be programmatically determinable.</p>
+
+		<p><strong>WCAG 2.0 – 3.1.2 Language of Parts (Level AA)</strong></p>
+
+		<p>The human language of each passage or phrase in the content can be programmatically determined except for proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.</p>
+
+	</div>
+	
+</section>
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="tables">
+
+	<header class="mod_header">
+		<h2>Tables</h1>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Tables used for layout</h3>
+
+		<p>Using HTML table element structures for layout purposes can cause significant problems for assistive technology users. Assistive technologies use the structure of an HTML table to present data to the user in a logical manner. When they encounter a layout table they may believe they are navigating through tabular data when they are not. It also means that extra, redundant, information (such as row and column numbers) is announced whenever a screen reader user navigates to a particular component, such as a link. This can add to the cognitive load by introducing extra noise that masks understanding of the content. In the Succeed Questionnaire, a layout table is sued to display images of foods the user does not eat.</p>
+
+		<figure class="extra">
+			<img src="./img/non-table.png"/>
+		</figure>
+
+		<h4>Recommendations</h4>
+
+		<p>The best practice recommendation is to eliminate the use of table elements to visually position content unless the content is data that should be presented in tabular format. Instead, where content does not relate to a table of data, use CSS to control its layout.  As a result, assistive technologies do not announce redundant information, such as row and column headers.</p>
+
+		<p><strong>Non-disruptive alternative (viable under certain conditions)</strong></p>
+
+		<p>An alternative approach which can be utilized until a recoding solution is feasible is to use the <a href="http://www.w3.org/WAI/PF/aria/roles#presentation">WAI-ARIA role attribute with a value of presentation</a> on any <code>&lt;table&gt;</code> elements that are being used purely for layout purposes.</p>
+
+		<textarea class="brush:html">
+			<table role="presentation">
+				&hellip;
+			</table>
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.3.1 Info and Relationships (Level A)</strong></p>
+
+		<p>Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+
+	</div>
+	
+</section>
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="navigation">
+
+	<header class="mod_header">
+		<h2>Navigation</h2>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Keyboard accessible</h3>
+		
+		<p>Keyboard users navigate web pages sequentially by moving from one focusable element (such as a link or form control/input) to the next. It is essential, therefore, that all functionality is implemented in a way that allows keyboard users to focus and activate any "trigger" elements on the page, otherwise they may be prevented from navigating between pages or completing specific tasks.</p>
+
+		<p><strong>Close button does not receive focus</strong></p>
+
+		<p>The close "X" used to back out of the Balance coaching is not reachable via keyboard. Screen reader and keyboard only  users will not be able to interact with this control. Keyboard only users, in particular, will find this frustrating since they will be able to see the control on the screen that they will not be allowed to interact with.</p>
+
+		<figure class="extra">
+			<img src="./img/focus.png"/>
+		</figure>
+
+		<p><strong>Dialog close button</strong></p>
+
+		<p>The "X" control used to dismiss dialogs is not reachable via keyboard. To compound the issue, these dialogs are not able to be dismissed via the ESC key which is a common design pattern for this type of component.</p>
+
+		<figure class="extra">
+			<img src="./img/dialog-close-focus.png"/>
+		</figure>
+
+		<h4>Recommendations</h4>
+
+		<p>Ensure that all actionable elements are reachable and can be operated using the keyboard alone, and that elements that are not actionable are not included in the keyboard tab order.</p>
+
+		<p>Ideally, button elements should be created using native HTML elements that expose a role of button (input with a type of button, submit or image, or a button element), as these elements also work with the correct keyboard behavior. The browser then handles all the keyboard support for native elements.</p>
+
+		<figure class="preCode">Okay solution...it's a little markup heavy</figure>
+		<textarea class="brush:html">
+			<button> 
+				<span data-ember-action="1" class="close-questionnaire">
+					<span class="visually-hidden">Close</span>
+				</span>
+			</button>
+		</textarea>
+
+		<figure class="preCode">Better solution...use approapriate markup and styles to hide text</figure>
+		<textarea class="brush:html">
+			<a href="" class="close-x">Close dialog</a>
+		</textarea>
+
+		<textarea class="brush:css">
+			.close-x {
+				background-image: url(close-x.png);
+				text-indent: -9000px;
+				overflow: hidden;
+				width: px;
+				height: px;
+			}
+		</textarea>		
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 2.1.1 Keyboard (Level A)</strong></p>
+
+		<p>All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.</p>
+
+		<p><strong>WCAG 2.0 – 4.1.2 Name, Role, Value (Level A)</strong></p>
+
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Bypass blocks</h3>
+
+		<p>Navigation links are the lists or "menus" of links to all the sections of a site that are often repeated on every page. As navigation links are typically placed at the beginning (top) of pages, screen reader users and sighted keyboard-only users are often required to read through all the navigation links before reaching the main area of the page.</p>
+
+		<p>Most tested pages did not have skip links, while others had them but they were not shown on focus. This adds an unexplained focus stop to keyboard only users and deprives them of functionality that they would otherwise find helpful.</p>
+
+		<h4>Recommnedations</h4>
+
+		<p>The <a href="http://www.w3.org/TR/wai-aria/">WAI ARIA specification</a> defines a set of specialized landmark roles. These roles provide a method to programmatically identify commonly found regions of web content in a consistent way, and allow assistive technologies to provide users with features they can use to identify and navigate to sections of the page.</p>
+		
+		<p>The following landmark roles can be used:</p>
+
+		<ul>
+			<li><code>banner</code></li>
+			<li><code>complementary</code></li>
+			<li><code>contentinfo</code></li>
+			<li><code>main</code></li>
+			<li><code>navigation</code></li>
+			<li><code>search</code></li>
+			<li><code>application</code></li>
+		</ul>
+
+		<p>To add landmark regions to an HTML document, identify the logical structure of the document. All content should be contained within a region so that screen reader users can be sure to get to all content, and not miss orphaned content. Add the landmark to the element containing the area of the content as a <code>role</code> attribute with the value corresponding to the list of roles above.</p>
+
+		<p>For example, identify the main (unique) content on the page by adding <code>role="main"</code> to a containing <code>&lt;div&gt;</code> element.</p>
+
+		<textarea class="brush:html">
+			<div class="container" role="main">
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 2.4.1 Bypass Blocks (Level A)</strong></p>
+
+		<p>A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Page and iFrame titles</h3>
+
+		<p><strong>Incorrect page titles within Single Page Application</strong></p>
+
+		<p>While some pages do correctly use the <code>&lt;title&gt;</code> element, many of the tested pages lacked unique or meaningful titles, relying instead on generic section titles such as "Digital Health Coaching."</p>
+
+		<p><strong>Titles missing for iframes</strong></p>
+
+		<p>Properly titled iFrames help users quickly navigate and understand the content of an iFrame without having to interact with the content. When these frames are not properly titled, their purpose or meaning is not properly conveyed to the user.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>Using the <code>&lt;title&gt;</code> element, make sure that each page has a unique page title that adequately summarizes the page content. For helpful wayfinding, a general rule of thumb is to use the following format: Page title – Section title – Application title. This format describes the current page as well as the current content, providing a "you are here" function.</p>
+
+		<textarea class="brush:html">
+			<iframe frameborder="0" allowfullscreen="" mozallowfullscreen="" title="Skills for Life video" webkitallowfullscreen="" src="//player.vimeo.com/video/121791632?autoplay=1&amp;color=0066CC" >
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 2.4.2 Page Titled (Level A)</strong></p>
+
+		<p>Web pages have titles that describe topic or purpose.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Focus and document flow</h3>
+
+		<p>Keyboard navigation involves using certain keys to move keyboard focus around the elements on the screen, and other keys to select the element that currently has keyboard focus. When keyboard commands trigger unexpected actions, the resulting change of context is disorienting.</p>
+
+		<p>There are few notable instances in the tested views where focus is not properly managed, leading to either a loss in focus or the user being able to navigate away from an area of the page when they should not be able to.</p>
+
+		<p>When a dialog is opened, focus is not moved to the window, instead the user is able to navigate around the page behind it.</p>
+
+		<figure class="extra">
+			System dialogs are not focused on when displayed
+			<img src="./img/prompt-dialog-focus.png"/>
+		</figure>
+
+		<h4>Recommendations</h4>
+
+		<p>Avoid attaching unexpected behaviors to controls. Unless change is expected and a direct result of user input, focus should remain on the trigger element and move forward as expected. </p>
+
+		<p>If a user opens a dialog, focus should be returned to that control when the dialog is dismissed. When loading additional information, such as additional articles generated by a "Read More" button, focus should move to the first new article.</p>
+
+		<p>When focus is moved to a menu that the user has opened, focus should remain inside that menu until the user makes a selection or closes it with the <code>ESC</code> key.</p>
+
+		<p>The non-keyboard specific portions of the WAI-ARIA design patterns for menus and dialogs must be adhered to. For information on the expected behavior refer to:</p>
+
+		<ul>
+			<li><code>Dialog modal</code></li>
+			<li><code>Menu</code></li>
+		</ul>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 2.1.1 Keyboard (Level A)</strong></p>
+
+		<p>All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.</p>
+
+		<p><strong>WCAG 2.0 – 2.4.3 Focus Order (Level A)</strong></p>
+
+		<p>If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Visible focus</h3>
+
+		<p>Sighted keyboard-only users navigate websites by moving focus sequentially through the page (using TAB/SHIFT+TAB to move the focus from one focusable element – such as a link or form control/input – to the next). While the text is underlined on hover, on many of the pages that were tested, indication of focus for keyboard users (with the exception of global nav and footer) falls back to the browser default. This makes it difficult for this user group to determine where their cursor currently is within the content.</p>
+
+		<p>It is imperative that interactive elements such as links, button, tabs and form select combo box controls clearly indicate when they have focus (i.e. focus indication should have high visual contrast). Otherwise sighted people who use a keyboard to interact with the website will not be able to determine their current position within the page.</p>
+
+		<p>Throughout all tested pages there were significant issues with visible focus. In some cases, the browser default was used which is often insufficient. And in others there was no indication at all.</p>
+
+		<figure class="extra">
+			In the example below, there is not visible indication of focus. Focus is on the Contact Us link.
+			<img src="./img/text-focus.png"/>
+		</figure>
+
+		<h4>Recommendations</h4>
+
+		<p>Provide a clearly visible indication of focus for all interactive elements. Developers that use CSS for presentation will typically use the hover pseudo class for indicating that the mouse is over an element, but overlook similar functionality for keyboard only users. For anchor and input elements, this is simply a case of including a focus pseudo class to provide the same information mouse users get when they hover over an element.</p>
+
+		<p>Any styles that applied, or changed on <code>:hover</code> must be also be observed on <code>:focus</code>.</p>
+
+		<p>For example where a CSS rule is set to indicate mouse hover on a link, add <code>a: active</code> (due to a bug in earlier versions of IE (before version 8), the <code>active</code> pseudo class must also be used) and <code>a:focus</code>, which will result in the same style being applied on focus.</p>
+
+		<p>The following recommendations should be applied together:</p>
+
+		<ul>
+			<li>Do not use CSS <code>outline: none</code> to hide the default focus indicator.</li>
+			<li>Provide indications of focus in the same manner and style that indications of mouse hover are provided.</li>
+			<li>Provide an indication of focus for input <code>type="image"</code> and links containing only an image.</li>
+		</ul>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 - 2.4.7 Focus Visible (Level AA)</strong></p>
+
+		<p>All user interface elements that receive focus must have a visible focus indicator.</p>
+
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Focus and reading order</h3>
+
+		<p>Users that navigate with a keyboard (both sighted users and users with assistive technology such as screen readers) will generally use Tab/Shift+Tab to move sequentially from one focusable element in the page to the next. By default, the order in which elements receive focus is determined by the order in which these elements are present in the document's markup. If this source order is not logical, users will have difficulty understanding the purpose/structure of the document and may miss important information and functionality.</p>
+
+		<p>While most of My HealthMedia follows a logical and intuitive order, there were noticeable instances where reading order deviates from this standard.</p>
+
+		<p>In the following example, CSS floats are incorrectly used in place of a logical reading order.</p>
+
+		<figure class="extra">
+			Floating elements creates bad focus flow using a keyboard
+			<img src="./img/order.png"/>
+		</figure>
+
+		<h4>Recommendations</h4>
+
+		<p>Make sure that the order in which elements receive keyboard focus, or are discovered by the user, follow a meaningful and logical sequence. Pay attention to code order; the tab order must make sense visually, but also match the HTML element order. Sequencing elements in the code so they follow a logical order helps to provide a logical and meaningful focus order.</p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.3.2 Meaningful Sequence (Level A)</strong></p>
+
+		<p>When the sequence in which content is presented affects it's meaning, a correct reading sequence can be programmatically determined.</p>
+
+		<p><strong>WCAG 2.0 – 2.4.3 Focus Order (Level A)</strong></p>
+
+		<p>If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.</p>
+
+	</div>
+	
+</section>
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="forms">
+
+	<header class="mod_header">
+		<h2>Forms</h1>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Labeling form controls</h3>
+
+		<p>Always provide a visible, programmatically associated, label for controls. The recommended approach is to use the <code>&lt;label&gt;</code> element with a <code>for</code> attribute containing a value which matches the id attribute of the relevant form control. The form control’s <code>title</code> attribute can be used instead of the <code>&lt;label&gt;</code> element, provided there is also a visible prompt for what should be entered in the field, as in a search input followed by a Search button.</p>
+
+		<p>If the HTML required attribute is not being used it is recommended that the aria-required attribute be added to required fields as this provides a programmatic indication that is announced by assistive technology that support it (example: row 2 of Table 4).</p>
+
+		<table class="bordered">
+		<thead>
+		<tr>
+			<th>HTML Element and type</th>
+			<th>Example</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><code>input type="text"</code></td>
+			<td><code>&lt;label for="email_address"&gt;email address&lt;label&gt;&lt;input type="text" id="email_address"&gt;</code></td>
+		</tr>
+		<tr>
+			<td>Required text fields using <code>aria-required</code></td>
+			<td><code>&lt;label for="email_address"&gt;email address &lt;img src="asterisk.png" alt="Required" /&gt;&lt;/label&gt;&lt;input type="text" id="email_address" aria-required="true"&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>input type="password"</code></td>
+			<td><code>&lt;label for="t2"&gt;Password&lt;/label&gt;&lt;input type="password" id="t2"&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>input type="button"</code></td>
+			<td><code>&lt;input type="button" value="Add engraving"&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>input type="submit"</code></td>
+			<td><code>&lt;input type="submit" value="Continue"&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>input type="image"</code></td>
+			<td><code>&lt;input type="image" src="select.png" alt="Select"&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>input type="radio"</code></td>
+			<td><code>&lt;input type="radio" id="t3"&gt; &lt;label for="t3"&gt; Yes&lt;/label&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>input type="checkbox"</code></td>
+			<td><code>&lt;input type="checkbox" id="t5"&gt;&lt;label for="t5"&gt;Subscribe &lt;/label&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>select</code></td>
+			<td><code>&lt;label for="t6"&gt;Title&lt;/label&gt;&lt;select id="t6"&gt;&lt;option&gt;Option&lt;/option&gt;...&lt;/select&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>textarea</code></td>
+			<td><code>&lt;label for="t7"&gt;Your comments&lt;/label&gt;&lt;textareaid="t7"&gt;&lt;/textarea&gt;</code></td>
+		</tr>
+		<tr>
+			<td><code>button</code></td>
+			<td><code>&lt;button id="subscribe"  type="submit"&gt;Subscribe&lt;/button&gt;&lt;/code></td>
+		</tr>
+		<tr>
+			<td>Use of <code>title</code> attribute when visible label is implicitly associated</td>
+			<td><code>&lt;input type="text" title="search"&gt;&lt;input type="submit" value="search"&gt;</code></td>
+		</tr>
+		</tbody>
+		</table>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 3.3.2 Labels or Instructions (Level A)</strong></p>
+		<p>Labels or instructions are provided when content requires user input.</p>
+
+		<p><strong>WCAG 2.0 – 4.1.2 Name, Role, Value (Level A)</strong></p>
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Notification of errors</h3>
+
+		<p>Error messages can be used to indicate when a user has not provided sufficient or correct information, or when there is a mismatch between the input information and required information. If not identified as an error, the message may not be apparent to assistive technology users.</p>
+		<p>In the following example, errors are listed at the top of the page, and the inputs with errors are visually identified using color. However, none of the error indicators are identified programmatically, and error descriptions are not programmatically tied to their respective inputs.</p>
+
+		<figure class="extra">
+			<img src="./img/error-message.png"/>
+		</figure>
+
+		<textarea class="brush:html">
+			<div class="messages error">
+			<ul>
+				<li>Please complete all required fields.</li>
+				<li>User Name Already Exists. Please choose another User Name to continue your registration.</li>
+				<li>Please complete the Security Questions.</li>
+				<li><p>You must accept the Privacy Statement and Terms of Use by clicking the checkbox below.</p></li>
+				<li>Please re-enter your password.</li>
+			</ul>
+			</div>
+		</textarea>
+
+		<h4>Recommendations</h4>
+		<p>Required fields should be identified using WAI-ARIA’s <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-required">aria-required</a> attribute.</p>
+		<p>Make sure that warning and error messages are clearly identified, and provide suitable advice on recovering from the error. Put error messages at the start of forms, to draw user attention to the nature and location of the form.</p>
+
+		<p>Inline messages can be very useful when designed and coded correctly.</p>
+
+		<ul>
+			<li>Enclose the message components in a container <code>div</code> element</li>
+			<li>Add the role of <code>alert</code> to the containing element so that it is announced to screen readers when an error or update occurs</li>
+			<li>Ensure the message begins with a heading so that it is discoverable; mark up the heading with an <code>id</code> attribute, so it can used to label the message</li>
+			<li>Use the <code>aria-labelledby</code> attribute on the container div, with the message heading id attribute as its value</li>
+			<li>When appropriate, use list markup to list messages, so information about the number of items is conveyed meaningfully to screen reader users</li>
+		</ul>
+
+		<p>When errors are found during form validation and the page is reloaded to display those errors, shift focus to the global error message. One method of doing so is to use JavaScript.</p>
+
+		<figure class="preCode">Error message box</figure>
+		<textarea class="brush:html">
+		<div tabindex="-1" role="alert" aria-labelledby="errorHeading" class="messages error">
+			<h2 id="errorHeading">New User Registration Error(s)</h2>
+			<ul>
+				<li><a href="#edit-first-name">First Name: This field is required.</a></li>
+			</ul>
+		</div>
+		</textarea>
+
+		<figure class="preCode">Errored input</figure>
+		<textarea class="brush:html">
+		<div class="name">
+			<label for="edit-first-name" class="nc3-color">First Name*</label>
+			<div id="edit-first-name-wrapper" class="form-item">
+				<input type="text" class="form-text nc3-color nc3-border-color" tabindex="3" autocomplete="off" value="" size="40" id="edit-first-name" name="first_name" maxlength="50" aria-required="true" aria-invalid="true">
+			</div>
+		</div>
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>3.2.4 Consistent Identification (Level AA)</strong></p>
+		<p>Components that have the same functionality within a set of Web pages are identified consistently. This requires text alternatives being consistent throughout the document, and consistent labelling of form controls and table headers.</p>
+
+		<p><strong>WCAG 2.0 - 3.3.1 Error Identification (Level A)</strong></p>
+		<p>If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.</p>
+
+		<p><strong>3.3.3 Error Suggestion (Level AA) </strong></p>
+		<p>If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.</p>
+
+		<p><strong>WCAG 2.0 - 4.1.2 Name, Role, Value (Level A)</strong></p>
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+	</div>
+
+</section>
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="color">
+
+	<header class="mod_header">
+		<h2>Color and contrast</h1>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Color contrast</h3>
+
+		<p>The level of contrast between foreground and background colors affects usability—more contrast makes it easier to distinguish characters and symbols. So it’s important to ensure that there is significant contrast between the color of text and its background color, so that is easily readable. This is particularly important for people with visual impairments that affect visual acuity or color perception.</p>
+		
+		<h4>Recommendations</h4>
+
+		<table class="bordered">
+		<thead>
+		<tr>
+			<th>Image</th>
+			<th>Function</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><p>Text overtop the hero image</p><img src="./img/text-over-background.png"/></td>
+			<td>Darken the foreground color to at least  #2F3232 to increase its color-contrast ratio to 4.6:1</td>
+		</tr>
+		<tr>
+			<td>
+				<p>Gray text surrounding the video thumbnails that’s overtop the appendages of the woman in the background</p>
+				<img src="./img/text-video-thumbnails.png">
+			</td>
+			<td>Darken the foreground color to at least  #5B6567 to increase its color-contrast ratio to 4.7:1</td>
+		</tr>
+		</tbody>
+		</table>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.4.3 Contrast (Minimum) (Level AA)</strong></p>
+		<p>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Information imparted through color alone</h3>
+
+		<p>Color is an important asset in the design of web content, enhancing its aesthetic appeal, usability, and its accessibility. Some users, however, have difficulty perceiving color. People with partial sight often experience limited color vision, and many older users don’t see color well.</p>
+
+		<figure class="extra">
+			Incomplete form fields depicted through color alone
+			<img src="./img/information-through-color.png"/>
+		</figure>
+
+		<h4>Recommendations</h4>
+
+		<p>Whenever color is used to convey information, make sure that the information is available without needing to see the color. For example, you could add a clearly perceivable border to form fields that are invalid or—even better—you could add a blurb of text alongside the fields that may have errors.</p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.4.1 Use of Color (Level A)</strong></p>
+		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.</p>
+
+	</div>
+	
+</section>
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="role">
+
+	<header class="mod_header">
+		<h2>Role and state</h1>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Button</h3>
+
+		<p>The site has many elements that, to the average user, would probably be thought of as "buttons", such as "Close" buttons, menu buttons, "Choose X" buttons, and the like. In the site’s current implementation, however, many of the site's "buttons" are coded using other elements, such as links or <code>&lt;div&gt;</code>s or <code>&lt;span&gt;</code>s rather than <code>&lt;button&gt;</code> elements.</p>
+
+		<p>Keyboard users often use the Tab key to cycle through the focusable elements within a page, but would-be buttons that are created through elements like <code>&lt;div&gt;</code>s and <code>&lt;span&gt;</code>s aren't keyboard accessible because there’s no means to focus them.</p>
+
+		<p>When links are used for "buttons", the elements are often focusable, but users may misinfer the elements' purpose if they were to assume that the link is going to take them to another page (or to another area within the current page).</p>
+
+		<p>For instance, if a screen-reader user were to come across a link that said "View Transcript", they might assume that clicking on it would take them to another page (rather than being displayed within an overlay). </p>
+		
+		<h4>Recommendations</h4>
+
+		<p>As a rule of thumb, other than elements that are literally links, clickable controls should be created with <code>&lt;button&gt;</code> elements.</p>
+
+		<p>For instance, all the interactive elements within the home page’s "Skills for Life" (at the time of this document creation) would be suitable as <code>&lt;button&gt;</code> elements: the video thumbnail, the “Play Video” button, and the “View Transcript” button.</p>
+
+		<figure class="preCode">The aria-label attribute overrides the description that screen readers would normally announce for an element. So in this case, the aria-label attribute ensures that screen-reader users will hear “View Skills for Life Transcript” rather than “View Transcript”, which may be ambiguous.</figure>
+		<textarea class="brush:html">
+			<button aria-label="View Skills for Life Transcript">View Transcript</button>
+		</textarea>
+
+		<p>If you're have no way around using an anchor element to create a "button", you'll need to either include the href attribute with an empty fragment identifier (href="#") or add tabindex="0" to the link so that it’s included in the keyboard tab order. If you use an empty fragment identifier (such as href="#"), you’ll also need to cancel the default action for the anchor element when it’s activated—if you don’t, an anchor with an empty fragment identifier will place focus at the start of the page.</p>
+
+		<p>You'll also need to add some JavaScript to make the would-be button accept to the same keyboard controls as native <code>&lt;button&gt;</code> elements. Namely, you’ll need to add keypress event handlers to the element to ensure that if someone focuses the element and presses Enter or Space, the element will react just the same as if they had clicked it. For instance, if you were to have a "View Transcript" link that acts like a button, you'd need to ensure that users could focus the element and press Enter or Space to trigger the transcript's overlay.</p>
+
+		<figure class="preCode">Example of link that acts like a button</figure>
+		<textarea class="brush:html">
+			<a role="button" tabindex="0" aria-label="View Skills for Life Transcript">View Transcript</a>
+		</textarea>
+
+		<p>Given the effort involved in creating "buttons" from whole cloth, we recommend using native <code>&lt;button&gt;</code> elements for clickable controls wherever you can. </p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 2.1.1 Keyboard (Level A)</strong></p>
+		<p>All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.</p>
+
+		<p><strong>WCAG 2.0 – 4.1.2 Name, Role, Value (Level A)</strong></p>
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Dropdown menus</h3>
+
+		<p>We're using the term "dropdown menu" to describe navigation menus such as the "hamburger" menu (which is in the top-left corner of the dashboard) as well as the "profile" menu (which in the top-right corner of the dashboard).</p>
+
+		<p>In their current implementation, the dropdown menus within the site use mostly semantic markup. But they aren’t accessible to keyboard users, and, and they don’t have the corresponding ARIA properties to convey their current state.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>Here’s the markup recommended for inline dropdown menus without a close button:</p>
+
+		<textarea class="brush:html">
+			<button aria-haspopup="true" aria-expanded="false">
+			    Judy Blume
+			    <span class="visuallyhidden">Profile</span>
+			    <i aria-hidden="true" class="icon-user-profile"> </i>
+			</button>
+			<nav>
+			    <ul>
+			        <li><a href="/mhmsite/my-profile">View My Account</a></li>
+			        <li><a href="/mhmsite/program/hra">Go to Succeed</a></li>
+			        <li><a href="/mhmsite/logout">Logout</a></li>
+			    </ul>
+			</nav>
+		</textarea>
+
+		<p>And here’s the markup recommended for full-screen dropdown menus with a close button:</p>
+
+		<textarea class="brush:html">
+			<button aria-haspopup="true" aria-expanded="false">
+			    <i aria-hidden="true" class="icon-hamburger-stack">  </i>
+			    Menu
+			</button>
+			<nav>
+			    <button>
+			        <span class="visuallyhidden">Close</span>
+			        <i aria-hidden="true" class="icon-sans-close">  </i>
+			    </button>
+			    <ul>
+			        <li class="home first active"><a href="/mhmsite/">Home</a></li>
+			        <li class="program-coaching"><a href="/mhmsite/program-coaching">Coaching</a></li>
+			        <li class="todolist"><a href="/mhmsite/todolist">To Do List</a></li>
+			        <li class="health-tools"><a href="/mhmsite/health-tools">Tools</a></li>
+			        <li class="resources last"><a href="/mhmsite/resources">Resources</a></li>
+			    </ul>
+			</nav>
+		</textarea>
+
+		<p>The key accessibility and ARIA roles and states are:</p>
+
+		<ul>
+			<li><a href="http://www.w3.org/TR/2011/CR-wai-aria-20110118/states_and_properties#aria-haspopup">aria-haspopup</a> &mdash; indicates that a button item has a sub-menu associated with it. (For dropdown menus, this should always be set to true.)</li>
+			<li><a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded">aria-expanded</a> &mdash; indicates that a menu is open (which usually implies it is visually expanded on-screen). Set this to true when the dropdown is visible and false when the dropdown is closed.</li>
+			<li><a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden">aria-hidden</a> &mdash; tells screen readers to ignore these elements. This attribute is used on elements containing icon-font icons, and aria-hidden ensures that screen readers don’t attempt to pronounce the Unicode characters that create those icons.</li>
+			<li><code>&lt;span class="visually-hidden"&gt;&lt;/span&gt;</code> &mdash; provides text equivalents for icon-font icons. In this example, for instance, this tells screen readers that the "X" icon is a "Close" button. (This technique is discussed in more detail in the section on "Alternative text for icon-font icons.")</li>
+		</ul>
+
+		<p>The menu button must support the following keystrokes:</p>
+
+		<p><strong>Enter</strong></p>
+		<ul>
+			<li>When the top-level button is focused: Open the dropdown menu and leave focus on the originating <code>&lt;button&gt;</code> element.</li>
+			<li>When the close button is focused: Close the dropdown and programmatically focus the top-level <code>&lt;button&gt;</code>.</li>
+			<li>When a link is focused: The link is clicked (normal behavior).</li>
+		</ul>
+
+		<p><strong>Tab</strong></p>
+		<ul>
+			<li>When the top-level button is focused but the dropdown is closed: Focus moves to the next visible focusable item within the page. (This behavior should happen automatically; it shouldn’t require any special programming.)</li>
+			<li>When the top-level button is focused and the dropdown is open: Focus moves to the first focusable item in the <code>&lt;nav&gt;</code> area—which will be either the "Close" <code>&lt;button&gt;</code> (if there is one) or the first link in the list. (This behavior should happen automatically; it shouldn’t require any special programming.)</li>
+		</ul>
+
+		<p><strong>Esc</strong></p>
+		<ul>
+			<li>Close the dropdown menu and programmatically focus the top-level <code>&lt;button&gt;</code>.</li>
+		</ul>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>2.1.1 Keyboard (Level A)</strong></p>
+		<p>All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints. (Level A)</p>
+
+		<p><strong>4.1.2 Name, Role, Value (Level A)</strong></p>
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Dialog/Modal overlay markup</h3>
+
+		<p>The site makes use of several modal dialogs, including the overlays for the videos and video transcripts (on the home page) as well as overlays to convey error messages in some instances.</p>
+
+		<p>The pop-up overlays are modal, which means all content 'behind' them must be hidden from the perspective of keyboard and assistive-technology users. But there are a number of situations where it's possible to navigate outside of the overlay and into the page below, either by using the Tab key or the 'virtual cursor' in screen readers.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>All overlays should have a role of dialog if the user may need to interact with the contents of the overlay, or a role of alertdialog if the overlay contains a brief set of content that should automatically be read to the user.</p>
+
+		<p>So for instance, the overlays for error messages should use <code>role="alertdialog"</code> because users would want to be able to hear those errors as soon as the overlay appears. But on the other hand, the overlays for the videos and video transcripts would be better suited with role="dialog"—because with the video overlays, users may need to interact with the videos' controls, and with the transcript overlays, users may prefer to ingest the transcripts at their own pace (rather than having the transcripts automatically read aloud in their entirety).</p>
+
+		<figure class="preCode">Recommended markup for an ordinary dialog</figure>
+		<textarea class="brush:html">
+			<div tabindex="-1"
+			    role="dialog"
+			    aria-labelledby="overlay-title">
+			    <button>Close</buttton>
+			        
+			    <h1 id="overlay-title">"Skills for Life" transcript</h1>
+			    <div id="overlay-content">
+			        <p>I want to have more energy.</p>
+			        <p>I want to live a full life.</p>
+			        <p>I want to feel healthy again.</p>
+			        <p>How do I get there?</p>
+			    </div>
+			    <button id="overlay-button">Close</button>
+			</div>
+		</textarea>
+
+		<figure class="preCode">Recommended markup for an alert dialog</figure>
+		<textarea class="brush:html">
+			<div tabindex="-1"
+			    role="alertdialog"
+			    aria-labelledby="overlay-title"
+			    aria-describedby="overlay-content">
+			    <h1 id="overlay-title">Please correct these errors.</h1>
+			    <div id="overlay-content">
+			        <ul>
+			            <li>Please enter your Password.</li>
+			        </ul>
+			    </div>
+			    <button id="overlay-button">Close</button>
+			</div>
+		</textarea>
+
+		<p><strong>The key accessibility and ARIA roles and states are:</strong></p>
+		<ul>
+			<li><a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby">aria-labelledby</a> &mdash; indicates the IDs of the elements that should be form the label for the overlay. So in the case of most overlays, their aria-labelledby attribute would point to the ID of whichever heading element is at the top of the overlay.</li>
+			<li><code>tabindex="-1"</code> &mdash; ensures that the containing element can be programmatically focused through JavaScript.</li>
+		</ul>
+
+		<p><strong>Properties just for ordinary overlays:</strong></p>
+		<ul>
+			<li><code><a href="http://www.w3.org/TR/wai-aria/roles#dialog">role="dialog"</a></code> &mdash; tells assistive technologies that this element is an ordinary overlay.</li>
+		</ul>
+
+		<p><strong>Properties just for alert dialogs:</strong></p>
+		<ul>
+			<li><code><a href="http://www.w3.org/TR/wai-aria/roles#alertdialog">role="alertdialog"</a></code> &mdash; tells assistive technologies that this element is an overlay with an alert.</li>
+			<li><code><a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-describedby">aria-describedby</a></code> &mdash; indicates which element should be read aloud automatically when the overlay is shown. (The example code happens to use id=”overlay-content” for the element containing the content, but feel free to use whichever ID you might like—as long as the overlay’s aria-describedby attribute matches that ID.)</li>
+		</ul>
+
+		<p>All background content should be hidden using the aria-hidden attribute (aria-hidden="true") to help further prevent screen-reader users from accidentally navigating into the background content using virtual keystrokes.</p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>4.1.2 Name, Role, Value (Level A)</strong></p>
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Title attribute</h3>
+
+		<p>Some controls have a redundant title attribute that repeats the control name. This can cause screen readers to announce the control label twice.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>As a rule of thumb, don't use title attributes on links or buttons or other elements—because that can lead to screen-reader users hearing those announcements twice. (There are a few rare edge cases where a <code>title</code> attribute may be of use, but other than those instances—which are called out within this document—you can assume that all other elements should have their <code>title</code> attributes removed.)</p>
+
+		<p>The <code>title</code> attribute is only intended to provide supplementary information. Instead, label links and controls using their respective alternative-text mechanisms (such as <code>alt</code> attributes for images and <code>&lt;label&gt;</code> elements for inputs).</p>
+
+		<p>The recommended markup below, for the "Forgot User Name" and "or Password" links, represents one of the rare edge case where a <code>title</code> attribute can be of use. While the "Forgot User Name" link is descriptive enough on its own—and so it shouldn't have a <code>title</code> attribute—there's a chance that the "or Password?" link could be ambiguous if a screen-reader user were to come across that link out of context. So in this specific case, the <code>title</code> attribute on “or Password?” can be retained since its <code>title</code> attribute helps more fully describe the link's purpose.</p>
+
+		<textarea class="brush:html">
+			<ul>
+			    <li>
+			        <a href="/mhmsite/forgot-username">Forgot User Name</a>
+			    </li>
+			    <li>
+			        <a href="/mhmsite/forgot-password" title="Forgot Password?">or Password?</a>
+			    </li>
+			</ul>
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 4.1.2 Name, Role, Value (Level A)</strong></p>
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+	</div>
+	
+</section>
+			
+			<footer role="contentinfo">
+			<p>
+				<span class="float_left">2015 Johnson &amp; Johnson, All rights reserved.</span>
+				<span class="float_right">All content licensed under Creative Commons Attribution 3.0 Unported License</span>
+			</p>
+			</footer>
+
+		</main>
+		
+		 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src='js/plugins.min.js'></script>
+		<script defer src='js/script.js'></script>
+
+		<script>var _gaq=[["_setAccount","UA-1745698-2"],["_trackPageview"]];(function(e,a){var c=e.createElement(a),b=e.getElementsByTagName(a)[0];c.async=1;c.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";b.parentNode.insertBefore(c,b)}(document,"script"));</script>
+	</body>
+</html>

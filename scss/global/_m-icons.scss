@@ -1,0 +1,17 @@
+[data-icon]:before {
+	font-family: FontAwesome;
+	font-weight: normal;
+	margin-right: 0.375em;
+	-webkit-font-smoothing: antialiased;
+}
+[data-icon="shopping-cart"]:before { content: "\f07a"; }
+[data-icon="upload"]:before { content: "\f0ee"; }
+[data-icon="download"]:before { content: "\f0ed"; }
+[data-icon="lock"]:before { content: "\f023"; }
+[data-icon="save"]:before { content: "\f0c7"; }
+[data-icon="delete"]:before { content: "\f00d"; }
+[data-icon="add"]:before { content: "\f067"; }
+[data-icon="copy"]:before { content: "\f0c5"; }
+[data-icon="search"]:before { content: "\f002"; }
+[data-icon="check"]:before { content: "\f046"; }
+[data-icon="calendar"]:before { content: "\f073"; }

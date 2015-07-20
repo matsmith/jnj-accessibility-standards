@@ -1,0 +1,192 @@
+<!-- #### Media SECTION #### -->
+
+<section class="mod" id="media">
+
+	<header class="mod_header">
+		<h2>Media</h1>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Alt text for images</h3>
+
+		<p>Text alternatives provide a text equivalent of visual information for users who can't see images. Without text alternatives, information in images is not accessible. With incorrect text alternatives, image-based information is confusing, misleading, or irrelevant.</p>
+		<p>When images are enclosed in a link or a button, the images’ alternate text needs to describe not just the image but also what will happen when the link is clicked.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>All images using the <code>&lt;img&gt;</code> element must be given appropriate alternative text using the alt attribute</p>
+
+		<textarea class="brush:html"><img src="&hellip;" alt="Alternative Text"></textarea>
+
+		<p>Follow these rules for alternative text:</p>
+
+		<ul>
+			<li>If the content displays specific information, the text shall be an accurate, concise and equivalent presentation of this information.</li>
+			<li>If an image is purely decorative, for example an image that is used for styling or layout purposes only, implement it as a CSS background image. If this isn’t a feasible solution, an empty alternative (e.g. alt="") must be always used. This will prevent assistive technology from trying to find a different way to describe the content (such as announcing the image's filename). Don’t use null alt attributes when images do convey meaningful content.</li>
+			<li>Phrases such as “image of&hellip;”, “graphic of&hellip;”, “&hellip; logo” or “click here” must be avoided.</li>
+			<li>If the image is the sole content of a link, the alt attribute should describe the link target, not the image.</li>
+			<li>If the content identifies a specific state (e.g. an icon that indicates incorrect input), this state must be described rather than the actual content.</li>
+			<li>Refer to HTML5: Techniques for providing useful text alternatives for comprehensive advice on text alternatives.</li>
+			<li>Don’t use the title attribute on images or links since doing so can lead to screen-reader users hearing that announcement twice.</li>
+			<li>Provide suitable direct equivalents for information presented in graphical format (such as a graph or a chart). This can be achieved by:</li>
+		</ul>
+			<ol>
+				<li>Providing short alternative text which briefly summarizes the content (Refer to: Providing short text alternatives that provide a brief description of the non-text content) AND</li>
+				<li>Providing a direct text/tabular equivalent of the graph/chart close to the image, or on a separate page using an appropriate link (Refer to: Providing a long description in text near the non-text content, with a reference to the location of the long description in the short description)</li>
+			</ol>
+
+		<h4>Examples</h4>
+
+		<table class="bordered">
+		<thead>
+		<tr>
+			<th>Image</th>
+			<th>Function</th>
+			<th>Current Alt</th>
+			<th>Recommended Alt</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><img src="./img/alt-table-skills.png"></td>
+			<td>Video thumbnail that, when its surrounding link clicked, plays the video</td>
+			<td><code>alt="Skills For Life"</code></td>
+			<td><code>alt="Play Skills For Life video"</code></td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-profiles.png"></td>
+			<td>Video thumbnail that, when its surrounding link is clicked, plays the video</td>
+			<td><code>alt="People Profiles"</code></td>
+			<td><code>alt="Play People Profiles video"</code></td>
+		</tr>
+		<tr>
+			<td>[logo-hm-overlay.png—a potentially transparent image]</td>
+			<td>Decorative image</td>
+			<td>(none)</td>
+			<td><code>alt=""</code></td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-decorative.png"></td>
+			<td>Decorative image</td>
+			<td>(none)</td>
+			<td><code>alt=""</code></td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-branding.png"></td>
+			<td>Branding image</td>
+			<td>(none)</td>
+			<td><code>alt="Wellness and Prevention"</code> or <code>alt="Wellness and Prevention, a Johnson &amp; Johnson company"</code> (Either version would be fine, depending on branding preferences.)</td>
+		</tr>
+		<tr>
+			<td><img src="./img/alt-table-profile-icon.png"></td>
+			<td>Decorative image within the context of its surrounding content</td>
+			<td><code>alt="My Mission"</code></td>
+			<td><code>alt=""</code></td>
+		</tr>
+		</tbody>
+		</table>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 &mdash; 1.1.1 Non-text Content (Level A)</strong></p>
+
+		<p>All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.</p>
+
+		<p><strong>WCAG 2.0 &mdash; 4.1.2 Name, Role, Value (Level A)</strong></p>
+
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Alt text for font-icons</h3>
+
+		<p>Icon fonts are just regular fonts, but instead of containing letters, numbers, and other typical font characters, they contain icons. As a simplified example, if you were to type an “m” using an icon font that might be displayed as a mailbox icon; or if you were to type an “h” using an icon font, that might be displayed as a home icon. The downside to icon fonts is that screen-reader users would only hear “m” or “h” or whichever letter is representing the icon that happens to be used—because the screen reader doesn’t know that the “m” happens to look like a mailbox and the “h” happens to look like a home icon.</p>
+
+		<h4>Issue</h4>
+
+		<textarea class="brush:html">
+			<i class="icon-sans-close close-overlay-icon">  </i>
+		</textarea>
+
+		<h4>Recommendations</h4>
+
+		<ul>
+			<li>Hide the character that triggers the icon from screen readers.</li>
+			<li>Then provide alternate text to describe what the icon represents.</li>
+		</ul>
+
+		<h4>Example</h4>
+
+		<textarea class="brush:html">
+			<span class="visually-hidden">Close</span><i aria-hidden="true" class="icon-sans-close close-overlay-icon">  </i>
+		</textarea>
+
+		<ul>
+			<li>The <code>aria-hidden="true"</code> attribute on the icon tells screen readers to ignore that element. (This prevents the screen reader from announcing whichever character may be in use there.)</li>
+			<li>The <code>&lt;span class="visually-hidden"&gt;Close&lt;/span&gt;</code> describes the icon, and the class="visually-hidden" part ensures that the “Close” text will only be available to screen readers. (That is, “Close” won’t appear on the screen anywhere.)</li>
+		</ul>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.1.1 Non-Text Content (Level A)</strong></p>
+
+		<p>All non-text content must have a text alternative that serves the same purpose. For images, ensure the alt attribute is an equivalent if the image isn’t presented.</p>
+
+		<p><strong>WCAG 2.0 – 1.3.1 Info and Relationships (Level A)</strong></p>
+
+		<p>Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Audio descriptions of visual media</h3>
+
+		<p>The videos on the home page don't have an audio-description track. This results in blind users not being able to fully understand the content of the videos.</p>
+
+		<p>For instance, the "Skills for Life" video has various on-screen headings (such as "Building Motivation" and "Coordinating Care") that a person who may be blind wouldn’t otherwise be aware of without an audio description.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>For hearing impaired &mdash; Closed Captioning</p>
+
+		<p>For visually impaired &mdash; Audio Descriptions of visual content or video text</p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0—1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)</strong></p>
+
+		<p>An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.</p>
+
+		<p><strong>WCAG 2.0 - 1.2.5 Audio Description (Prerecorded) (Level AA)</strong></p>
+
+		<p>Audio description is provided for all prerecorded video content in synchronized media.</p>
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">ASCII art used as image</h3>
+
+		<p>"ASCII art" is images created using special arrangements of text characters and symbols. For example, "->" often is used as an arrow. Screen readers read most ASCII art literally, which can be extremely confusing. For example, "->" reads as "dash greater."</p>
+		
+		<p>ASCII art is present in some tested screens. In the image below a ">" is used and announced by JAWS as "more news greater than link"</p>
+
+		<figure class="preCode">Notice the &gt; character in the value attribute</figure>
+		<textarea class="brush:html">
+			<input type="submit" class="form-submit program_forecolor" value="Save and Continue &gt;" id="edit-navigation-next" name="op">
+		</textarea>
+
+		<h4>Recommendations</h4>
+
+		<p>Don't use ASCII art...just DON'T.</p>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.1.1 Non-Text Content (Level A)</strong></p>
+
+		<p>All non-text content must have a text alternative that serves the same purpose. For images, ensure the alt attribute is an equivalent if the image is not presented.</p>
+
+		<p><strong>WCAG 2.0 – 4.1.2 Name, Role, Value (Level A)</strong></p>
+
+		<p>For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically</p>
+
+	</div>
+	
+</section>

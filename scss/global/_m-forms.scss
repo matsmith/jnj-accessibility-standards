@@ -1,0 +1,99 @@
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="number"], input[type="date"], input[type="file"],
+textarea,
+select {
+	max-width: 100%;
+	padding: 0.3125em;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	transition: 0.125s linear border;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font: inherit;
+}
+input[type="checkbox"], input[type="radio"] {
+	margin-right: 0.25em;
+}
+select {
+	height: 2.125em;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: 0;
+	border-color: #c85656;
+}
+label, .label {
+	margin-bottom: 0.34375em;
+}
+.toggle {
+	margin: 0 0 0.6875em;
+	display: block;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	cursor: not-allowed;
+	background-color: #eaeded;
+	color: #aaa;
+	border-color: transparent;
+}
+.form_hint {
+	font-size: 0.875em;
+	color: #999;
+}
+.control_group {
+	margin-bottom: 0.6875em;
+}
+
+.form_vertical input[type="text"], .form_vertical input[type="email"], .form_vertical input[type="password"], .form_vertical input[type="search"], .form_vertical input[type="number"], .form_vertical input[type="date"], .form_vertical input[type="file"],
+.form_vertical select,
+.form_vertical label, .form_vertical .label,
+.form_vertical .form_hint {
+	display: block;
+	margin-left: 0;
+	margin-bottom: 0.34375em;
+}
+
+.form_horizontal input[type="text"], .form_horizontal input[type="email"], .form_horizontal input[type="password"], .form_horizontal input[type="search"], .form_horizontal input[type="number"], .form_horizontal input[type="date"], .form_horizontal input[type="file"],
+.form_horizontal textarea,
+.form_horizontal select {
+	display: block;
+}
+.form_horizontal .control_group label, .form_horizontal .control_group .label {
+	display: block;
+}
+
+@media only screen and (max-width:480px){
+	.form_horizontal input,
+	.form_horizontal textarea,
+	.form_horizontal select {
+		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width:600px){
+	.form_horizontal input[type="text"], .form_horizontal input[type="email"], .form_horizontal input[type="password"], .form_horizontal input[type="search"], .form_horizontal input[type="number"], .form_horizontal input[type="date"], .form_horizontal input[type="file"],
+	.form_horizontal textarea,
+	.form_horizontal select {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.form_horizontal .control_group label, .form_horizontal .control_group .label {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.form_hint {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.toggle {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

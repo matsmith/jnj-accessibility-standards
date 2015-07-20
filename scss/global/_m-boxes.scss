@@ -1,0 +1,60 @@
+.mod {
+	margin: 0 0 2.75em;
+	border-radius: 2px;
+	overflow: hidden;
+}
+.mod_header {
+	padding: 0.6875em;
+	background-color: #ff6d6d;
+	background-color: rgba(255, 109, 109, 0.125);
+	border-radius: 2px 2px 0 0;
+}
+.mod_body {
+	padding: 0.6875em;
+}
+.mod_footer {
+	padding: 0.6875em;
+	border-radius: 0 0 2px 2px;
+}
+
+.mod.m_highlight {
+	background-color: #ff6d6d;
+	background-color: rgba(255, 109, 109, 0.125);
+}
+.mod.m_pop {
+	box-shadow: 0.125em 0.125em 0.5em rgba(0, 0, 0, 0.15);
+	border: 1px solid #ff6d6d;
+	border: 1px solid rgba(255, 109, 109, 0.25);
+}
+
+.m_list .mod_body {
+	padding-left: 0;
+	padding-right: 0;
+}
+.m_list .mod_body li {
+	padding: 0 0.6875em 0.6875em;
+	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.m_list .mod_body li:last-child {
+	border-bottom: none;
+}
+
+.acdn_header {
+	cursor: pointer;
+}
+.acdn_body {
+	display: none;
+	border-top: 1px solid #eee;
+	margin-top: 0.6875em;
+	padding-top: 0.6875em;
+}
+.acdn.open > .acdn_body {
+	display: inherit;
+}
+
+.m_modal {
+	text-align: left;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.95);
+}

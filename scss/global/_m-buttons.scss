@@ -1,0 +1,87 @@
+.button, .button:link, .button:visited,
+button,
+input[type="submit"] {
+	display: inline-block;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: auto;
+	padding: 0.3125em 0.666666667em;
+	border: 0;
+	border-radius: 4px;
+	line-height: 1.333333333;
+	vertical-align: middle;
+	color: #fff;
+	background-color: #ff6d6d;
+	transition: opacity 0.25s ease;
+	font-weight: 300;
+	text-align: center;
+}
+.button:hover, .button:focus,
+button:hover, button:focus,
+input[type="submit"]:hover, input[type="submit"]:focus {
+	opacity: 0.8;
+}
+
+/* Sizes */
+.button.button_mini,
+button.button_mini,
+input[type="submit"].button_mini {
+	font-size: 0.75em;
+}
+.button.button_small,
+button.button_small,
+input[type="submit"].button_small {
+	font-size: 0.875em;
+}
+.button.button_large,
+button.button_large,
+input[type="submit"].button_large {
+	padding-top: 0.1875em;
+	padding-bottom: 0.125em;
+	font-size: 2em;
+}
+.button.button_xlarge,
+button.button_xlarge,
+input[type="submit"].button_xlarge {
+	padding-top: 0.125em;
+	padding-bottom: 0.125em;
+	font-size: 2.5em;
+}
+
+.button.block,
+button.block,
+input[type="submit"].block {
+	display: block;
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+.button.disabled, .button[disabled],
+button.disabled, button[disabled],
+input[type="submit"].disabled, input[type="submit"][disabled] {
+	opacity: 0.25;
+	cursor: not-allowed;
+}
+.button.secondary,
+button.secondary,
+input[type="submit"].secondary {
+	background-color: #c85656;
+}
+.button.warning,
+button.warning,
+input[type="submit"].warning {
+	color: #ca3e00;
+	background-color: #faa732;
+}
+
+.button.icon_only,
+button.icon_only {
+	width: 2em;
+	padding-left: 0;
+	padding-right: 0;
+	text-align: center;
+}
+.button.icon_only:before,
+button.icon_only:before {
+	margin-right: 0;
+}

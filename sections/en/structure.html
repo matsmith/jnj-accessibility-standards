@@ -1,0 +1,102 @@
+<!-- #### ACCESSIBILITY SECTION #### -->
+
+<section class="mod" id="structure">
+
+	<header class="mod_header">
+		<h2>Structure</h2>
+	</header>
+
+	<div class="mod_body">
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Semantic markup</h3>
+		
+		<p>When list-based content is marked up as a list, assistive technology users can quickly navigate to the content, and easily skip over it and easily orient themselves within it (particularly useful for nested lists). When it is not, the user has to find it by moving through the entire page, and cannot skip over it.</p>
+
+		<p>While most tested samples use lists correctly, in others proper use of lists would provide missing semantic structure to the code, improving the experience for the user.</p>
+
+		<p>In the example below, the items in the left column of the page explain the various stages in the Succeed section of the app, however, there is no programmatic association between these elements to expose any kind of relationship between them.</p>
+
+		<figure class="extra">
+			<img src="./img/semantic-markup.png"/>
+		</figure>
+
+		<textarea class="brush:html">
+			<div id="left-navigation"> <!-- left navigation -->
+				<a class="skip-content" href="#main-content">Skip to Main Content</a>
+				<!-- each item in this part is inside a div -->
+				<div id="menu_assessment">
+					<div class="program_nav_box_inactive">
+						<div class="program_nav_head">
+							<span class="program_nav_head_logo"></span>
+							<span class="program_nav_head_text">Questionnaire</span>
+						</div>
+						<div class="program_nav_description">
+							<p class="navigation-text">Your <strong>questionnaire</strong> will tell us where you are and what you need, so that we can create your plan.</p>
+						</div>
+					</div>
+				</div>
+
+			&hellip;
+
+			</div>
+
+		</textarea>
+
+		<h4>Recommendations</h4>
+
+		<p>Make sure that, where content is organized as a list, the appropriate list markup (<code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> elements) is used. Avoid using asterisks or other characters within HTML to make items not marked up as a list look as if they represent items within a list.  The rule of thumb to follow is: if it looks like a list, mark it up as a list.</p>
+
+		<p>In the formentioned example, these elements would be better presented as a description list (<code>&lt;dl&gt;</code>). This would allow the user to understand the relationship between the name of the section (<code>&lt;dt&gt;</code>) and it's description (<code>&lt;dd&gt;</code>).</p>
+
+		<textarea class="brush:html">
+			<dl>
+				<dt id="menu_assessment">
+					<span class="program_nav_head_logo"></span>
+					Questionnaire
+				</dt>
+				<dd>
+					Your <strong>questionnaire</strong> will tell us where you are and what you need, so that we can create your plan.
+				</dd>
+
+				&hellip;
+
+			</dl>
+
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 1.3.1 Info and Relationships (Level A)</strong></p>
+
+		<p>Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+
+
+		<!-- SUB SECTION -->
+		<h3 data-icon="add">Human language of page content</h3>
+
+		<p>The <code>lang</code> attribute is used on &lt;html&gt; element to indicate the overall language a page, and the <code>lang</code> attribute can also be used on individual elements to indicate that they’re in a language that’s different from the main language of the page. The <code>lang</code> attribute explicit defines what language a page or an element is in so that an appropriate language dictionary can be used; and in the case of screen readers and similar assistive technologies with voice output, it also ensures that the content is pronounced using the right voice or language library.</p>
+
+		<p>Currently, all tested pages correctly set the lang attribute of their <code>&lt;html&gt;</code> elements correctly to "English" or "Spanish" as needed.</p>
+
+		<h4>Recommendations</h4>
+
+		<p>If certain elements within a page use a language that’s different from the language that’s set on the page’s <code>&lt;html&gt;</code> element, those elements (or one of their containing elements) need to have a lang attribute to convey that they’re in a different language.</p>
+
+		<textarea class="brush:html">
+			<li lang="es" class="language last"><a href="/mhmsite/choose-language/es">Ver en Español</a></li>
+		</textarea>
+
+		<h4>Related Standards</h4>
+
+		<p><strong>WCAG 2.0 – 3.1.1 Language of Page (Level A)</strong></p>
+
+		<p>The default human language of the page must be programmatically determinable.</p>
+
+		<p><strong>WCAG 2.0 – 3.1.2 Language of Parts (Level AA)</strong></p>
+
+		<p>The human language of each passage or phrase in the content can be programmatically determined except for proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.</p>
+
+	</div>
+	
+</section>
